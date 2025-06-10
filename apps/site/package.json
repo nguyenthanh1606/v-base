@@ -16,7 +16,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/jest-dom": "^5.17.0",
     "vitest": "^0.34.0",
-    "@vitest/runner-vite": "^1.0.0",
     "typescript": "^5.2.2"
   }
 }
