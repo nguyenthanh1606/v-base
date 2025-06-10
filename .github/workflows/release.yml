@@ -24,10 +24,10 @@ jobs:
         run: yarn install
       
       - name: Build UI Library
-        run: yarn nx build ui
+        run: yarn nx run ui:build
       
       - name: Build Site
-        run: yarn nx build site
+        run: yarn nx run site:build
       
       - name: Create Release
         id: create_release
