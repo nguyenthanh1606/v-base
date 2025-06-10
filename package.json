@@ -1,0 +1,50 @@
+{
+  "name": "v-base",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "nx build",
+    "test": "nx test",
+    "serve": "nx serve",
+    "dev": "nx serve site",
+    "build:all": "nx run-many --target=build --all",
+    "lint": "nx run-many --target=lint --all",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@nx/eslint": "18.0.4",
+    "@nx/eslint-plugin": "18.0.4",
+    "@nx/js": "18.0.4",
+    "@nx/react": "18.0.4",
+    "@nx/vite": "18.0.4",
+    "@nx/workspace": "18.0.4",
+    "@types/node": "18.16.9",
+    "@types/react": "^19.1.7",
+    "@types/react-dom": "^19.1.6",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "@vitejs/plugin-react": "^4.1.0",
+    "eslint": "~8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "^9.1.7",
+    "nx": "18.0.4",
+    "prettier": "^2.6.2",
+    "typescript": "~5.2.2",
+    "vite": "^5.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ]
+}

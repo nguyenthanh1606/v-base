@@ -1,0 +1,38 @@
+.app {
+    font-family: sans-serif;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  .app :global(.gutter-left) {
+    margin-left: 9px;
+  }
+  
+  .app :global(.col-span-2) {
+    grid-column: span 2;
+  }
+  
+  .app :global(.flex) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .app :global(.hero) {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .app :global(.hero h1) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .app :global(.hero h2) {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
