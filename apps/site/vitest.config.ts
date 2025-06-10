@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import react from '@vitejs/plugin-react';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -23,6 +23,9 @@ export default defineConfig({
       reporter: ['text', 'html'],
       include: ['**/*.test.ts', '**/*.spec.ts'],
       exclude: ['node_modules', 'dist'],
+    },
+    deps: {
+      inline: ['jsdom'],
     },
   },
 });
