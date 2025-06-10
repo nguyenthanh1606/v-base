@@ -4,13 +4,21 @@
   "license": "MIT",
   "scripts": {
     "build": "nx build",
-    "test": "nx test",
+    "test": "vitest",
     "serve": "nx serve",
     "dev": "nx serve site",
     "build:all": "nx run-many --target=build --all",
     "lint": "nx run-many --target=lint --all",
     "format": "prettier --write .",
     "prepare": "husky install"
+  },
+  "vitest": {
+    "globals": true,
+    "environment": "jsdom",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "moduleNameMapper": {
+      "^@v-site/ui$": "<rootDir>/libs/ui/src/index.ts"
+    }
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,23 @@
+{
+  "name": "@v-base/site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nx build site",
+    "test": "vitest",
+    "serve": "nx serve site",
+    "lint": "nx lint site"
+  },
+  "dependencies": {
+    "@v-site/ui": "file:../../dist/libs/ui",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "vitest": "^0.34.0",
+    "@vitest/runner-vite": "^1.0.0",
+    "typescript": "^5.2.2"
+  }
+}
