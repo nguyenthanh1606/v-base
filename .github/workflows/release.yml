@@ -29,6 +29,12 @@ jobs:
       - name: Build Site
         run: yarn nx run site:build
 
+      - name: Add .nojekyll file
+        run: touch dist/apps/site/.nojekyll
+
+      - name: Copy 404.html fallback (optional for SPA)
+        run: cp dist/apps/site/index.html dist/apps/site/404.html
+
       - name: Zip Site Build
         run: |
           cd dist/apps/site
