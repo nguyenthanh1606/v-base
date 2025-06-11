@@ -8,6 +8,8 @@ export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/site',
 
+  base: '/v-base/',
+
   server: {
     port: 4200,
     host: 'localhost',
@@ -26,11 +28,6 @@ export default defineConfig({
       '@v-site/ui': resolve(__dirname, '../../libs/ui/src'),
     },
   },
-
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
 
   build: {
     outDir: '../../dist/apps/site',
