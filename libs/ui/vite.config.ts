@@ -17,6 +17,12 @@ export default defineConfig({
       tsconfigPath: resolve(__dirname, 'tsconfig.lib.json'),
     }),
   ],
+  
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+    },
+  },
 
   resolve: {
     alias: {
@@ -43,6 +49,10 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'react/jsx-runtime',
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css') return 'index.css';
+          return assetInfo.name || '';
         },
       },
     },

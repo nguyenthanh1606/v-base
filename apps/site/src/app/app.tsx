@@ -6,7 +6,7 @@ export function App() {
   const [inputValue, setInputValue] = useState('');
 
   return (
-    <div className="min-h-screen bg-background p-8">
+    <div className="min-h-screen bg-background p-4">
       <div className="mx-auto max-w-4xl space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
