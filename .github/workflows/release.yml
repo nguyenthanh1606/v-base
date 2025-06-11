@@ -1,4 +1,4 @@
-name: Release
+name: Release and Deploy
 
 on:
   push:
@@ -8,28 +8,33 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'yarn'
-      
+
       - name: Install dependencies
         run: yarn install
-      
+
       - name: Build UI Library
         run: yarn nx run ui:build
-      
+
       - name: Build Site
         run: yarn nx run site:build
-      
-      - name: Create Release
+
+      - name: Zip Site Build
+        run: |
+          cd dist/apps/site
+          zip -r ../../site-${{ github.ref_name }}.zip .
+
+      - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -39,13 +44,19 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
-      
-      - name: Upload Release Asset
+
+      - name: Upload Site Zip to Release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/apps/site
-          asset_name: site-${{ github.ref }}.zip
+          asset_path: ./dist/site-${{ github.ref_name }}.zip
+          asset_name: site-${{ github.ref_name }}.zip
           asset_content_type: application/zip
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/apps/site
