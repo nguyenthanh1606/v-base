@@ -57,43 +57,48 @@ nx build site
 
 # Available Scripts
 
-- `npm run dev` – Start the site development server  
-- `npm run build` – Build the current project  
-- `npm run build:all` – Build all projects  
-- `npm run test` – Run tests  
-- `npm run lint` – Lint all projects  
-- `nx serve site` – Start the site app  
-- `nx build ui` – Build the UI library  
-- `nx test ui` – Test the UI library  
+- `npm run dev` – Start the site development server
+- `npm run build` – Build the current project
+- `npm run build:all` – Build all projects
+- `npm run test` – Run tests
+- `npm run lint` – Lint all projects
+- `nx serve site` – Start the site app
+- `nx build ui` – Build the UI library
+- `nx test ui` – Test the UI library
 
 ---
 
 # Project Features
 
 ### ✅ Nx Workspace
-- Monorepo setup with smart caching  
-- Code sharing between applications and libraries  
-- Consistent tooling and configuration  
+
+- Monorepo setup with smart caching
+- Code sharing between applications and libraries
+- Consistent tooling and configuration
 
 ### ✅ React 18 + TypeScript
-- Latest React with concurrent features  
-- Full TypeScript support with strict mode  
-- Type-safe component development  
+
+- Latest React with concurrent features
+- Full TypeScript support with strict mode
+- Type-safe component development
 
 ### ✅ Vite Configuration
-- Lightning-fast development server  
-- Hot module replacement (HMR)  
-- Optimized production builds  
-- Plugin ecosystem integration  
+
+- Lightning-fast development server
+- Hot module replacement (HMR)
+- Optimized production builds
+- Plugin ecosystem integration
 
 ### ✅ shadcn/ui Integration
-- Pre-built accessible components  
-- Tailwind CSS integration  
-- Customizable design system  
-- CVA (Class Variance Authority) for variants  
+
+- Pre-built accessible components
+- Tailwind CSS integration
+- Customizable design system
+- CVA (Class Variance Authority) for variants
 
 ### ✅ Development Experience
-- ESLint for code quality  
-- Prettier for code formatting  
-- Path aliases for clean imports  
-- TypeScript strict mode  
+
+- ESLint for code quality
+- Prettier for code formatting
+- Path aliases for clean imports
+- TypeScript strict mode

@@ -17,7 +17,7 @@ export default defineConfig({
       tsconfigPath: resolve(__dirname, 'tsconfig.lib.json'),
     }),
   ],
-  
+
   css: {
     modules: {
       localsConvention: 'camelCase',

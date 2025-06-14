@@ -16,10 +16,10 @@
   }
 }
 
-[data-state="open"] {
+[data-state='open'] {
   animation: accordion-down 0.2s ease-out;
 }
 
-[data-state="closed"] {
+[data-state='closed'] {
   animation: accordion-up 0.2s ease-out;
 }
