@@ -2,9 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -12,22 +12,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'yarn'
-      
+
       - name: Install dependencies
         run: yarn install
-      
+
       - name: Build UI Library
         run: yarn nx run ui:build
-      
+
       - name: Build Site
         run: yarn nx run site:build
-      
+
       - name: Run Tests
         run: yarn nx run site:test
 
@@ -38,16 +38,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'yarn'
-      
+
       - name: Install dependencies
         run: yarn install
-      
+
       - name: Build Site
         run: yarn nx build site
 
@@ -56,7 +56,7 @@ jobs:
 
       - name: Copy 404 fallback page (for SPA)
         run: cp dist/apps/site/index.html dist/apps/site/404.html
-      
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
